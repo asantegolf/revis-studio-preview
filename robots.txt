@@ -1,0 +1,5 @@
+# PREVIEW DEPLOYMENT — do not index.
+# When the redesign launches on revisstudio.com, replace this file with
+# `robots.production.txt` (kept alongside in the repo).
+User-agent: *
+Disallow: /

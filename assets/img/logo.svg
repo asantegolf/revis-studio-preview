@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" role="img" aria-label="Revis Studio">
+  <g fill="none" stroke="#1A1612" stroke-width="1.2" stroke-linejoin="round">
+    <path d="M40 14 L66 28 L66 52 L40 66 L14 52 L14 28 Z"/>
+    <path d="M40 14 L40 66 M14 28 L66 52 M14 52 L66 28"/>
+  </g>
+  <text x="90" y="48" font-family="Fraunces, Georgia, serif" font-size="32" font-weight="380" fill="#1A1612" letter-spacing=".5">
+    Revis <tspan font-style="italic" fill="#8B6F47">Studio</tspan>
+  </text>
+</svg>

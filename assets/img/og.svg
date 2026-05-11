@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#efeae0"/>
+      <stop offset="1" stop-color="#d8c5a8"/>
+    </linearGradient>
+    <radialGradient id="warm" cx="20%" cy="80%" r="80%">
+      <stop offset="0" stop-color="#8B6F47" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#8B6F47" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grain" x="0" y="0" width="220" height="220" patternUnits="userSpaceOnUse">
+      <filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.05 0 0 0 0.18 0"/></filter>
+      <rect width="220" height="220" filter="url(#n)"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#warm)"/>
+  <rect width="1200" height="630" fill="url(#grain)" opacity=".5"/>
+
+  <!-- mark -->
+  <g transform="translate(96 96)" fill="none" stroke="#1A1612" stroke-width="1.4">
+    <path d="M24 0 L48 14 L48 38 L24 52 L0 38 L0 14 Z"/>
+    <path d="M24 0 L24 52 M0 14 L48 38 M0 38 L48 14"/>
+  </g>
+
+  <!-- name -->
+  <text x="96" y="200" font-family="Fraunces, Georgia, serif" font-size="40" font-weight="380" fill="#1A1612" letter-spacing="0.5">Revis <tspan font-style="italic" fill="#8B6F47">Studio</tspan></text>
+
+  <!-- big headline -->
+  <text x="96" y="370" font-family="Fraunces, Georgia, serif" font-size="120" font-weight="320" fill="#1A1612" letter-spacing="-3">From the</text>
+  <text x="96" y="490" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="120" font-weight="320" fill="#8B6F47" letter-spacing="-3">Himalaya</text>
+  <text x="96" y="595" font-family="Fraunces, Georgia, serif" font-size="60" font-weight="340" fill="#1A1612" letter-spacing="-1">to New York. <tspan font-style="italic" fill="#4A4239">Since 2001.</tspan></text>
+
+  <!-- meta strip -->
+  <g font-family="JetBrains Mono, ui-monospace, monospace" font-size="16" fill="#4A4239" letter-spacing="2">
+    <text x="800" y="135">CUSTOM HAND-KNOTTED RUGS</text>
+    <text x="800" y="160">NEW YORK · KATHMANDU</text>
+    <text x="800" y="185">REVISSTUDIO.COM</text>
+  </g>
+</svg>
