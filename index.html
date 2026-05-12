@@ -36,15 +36,7 @@
 <link rel="stylesheet" href="assets/css/style.css" />
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
 
-<!-- Speculation rules for instant navigation -->
-<script type="speculationrules">
-{
-  "prerender": [{
-    "where": { "selector_matches": "a[href$='.html'], a[href='./']" },
-    "eagerness": "moderate"
-  }]
-}
-</script>
+<!-- Speculation rules disabled for preview build (re-enable when site is at its production URL with full caching headers). -->
 
 <!-- JSON-LD: a single connected graph -->
 <script type="application/ld+json">
@@ -748,6 +740,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=2" defer></script>
+<script src="assets/js/main.js?v=3" defer></script>
 </body>
 </html>
