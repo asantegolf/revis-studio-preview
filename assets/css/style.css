@@ -454,6 +454,106 @@ figcaption b { color: var(--ink); font-weight: 500; }
 .contact-list dd a { color: var(--ink); border-bottom: 1px solid color-mix(in oklch, var(--ink) 25%, transparent); padding-bottom: 1px; }
 .contact-list dd a:hover { border-color: var(--ink); }
 
+/* ----- Warm card panel (rich ochre/clay calling card) ----- */
+.warm-card {
+  --warm: oklch(46% 0.085 50);
+  --warm-deep: oklch(36% 0.075 45);
+  --warm-bright: oklch(64% 0.12 55);
+  background: var(--warm);
+  color: oklch(96% 0.018 80);
+  border-radius: var(--rad-lg);
+  padding: clamp(2.25rem, 1.75rem + 2vw, 3.75rem);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.warm-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(80% 90% at 100% 100%, color-mix(in oklch, var(--warm-bright) 38%, transparent) 0%, transparent 55%),
+    radial-gradient(60% 70% at 0% 0%, color-mix(in oklch, var(--warm-deep) 55%, transparent) 0%, transparent 60%);
+  z-index: -1;
+}
+.warm-card .eyebrow {
+  color: color-mix(in oklch, oklch(96% 0.018 80) 72%, transparent);
+}
+.warm-card h2 {
+  color: oklch(96% 0.018 80);
+  font-weight: 380;
+  letter-spacing: -0.012em;
+}
+.warm-card h2 em { color: oklch(92% 0.04 75); font-style: italic; }
+.warm-card a {
+  color: oklch(96% 0.018 80);
+  border-bottom: 1px solid color-mix(in oklch, oklch(96% 0.018 80) 40%, transparent);
+  padding-bottom: 1px;
+  transition: border-color var(--dur-fast) var(--ease);
+}
+.warm-card a:hover { border-bottom-color: oklch(96% 0.018 80); }
+.warm-card address { font-style: normal; }
+.warm-card__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.75rem, 1.25rem + 1.5vw, 2.75rem);
+}
+@media (min-width: 720px) {
+  .warm-card__grid { grid-template-columns: 1fr 1fr; gap: clamp(2rem, 1.5rem + 2vw, 4rem); }
+}
+.warm-card__block dt {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in oklch, oklch(96% 0.018 80) 68%, transparent);
+  margin-bottom: 0.75rem;
+}
+.warm-card__block dd {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: 380;
+  line-height: 1.5;
+  color: oklch(96% 0.018 80);
+}
+.warm-card__block dd + dt { margin-top: 1.5rem; }
+.warm-card__block dd .note {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.04em;
+  color: color-mix(in oklch, oklch(96% 0.018 80) 60%, transparent);
+  margin-left: 0.5em;
+}
+
+/* Numeric flourish for the warm card */
+.warm-card__no {
+  position: absolute;
+  top: clamp(1.5rem, 1rem + 1vw, 2.5rem);
+  right: clamp(1.5rem, 1rem + 1vw, 2.5rem);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.12em;
+  color: color-mix(in oklch, oklch(96% 0.018 80) 65%, transparent);
+  z-index: 1;
+}
+
+/* A soft warm tint section (for closing CTAs) */
+.tint-warm {
+  background: oklch(92% 0.035 70);
+}
+.tint-warm--soft { background: color-mix(in oklch, var(--paper) 80%, oklch(75% 0.07 55)); }
+
+/* Warm headline accent variant */
+.h-accent em { color: var(--ochre); font-style: italic; }
+
+/* Warm submit button variant */
+.btn--warm {
+  background: oklch(46% 0.085 50);
+  border-color: oklch(46% 0.085 50);
+  color: oklch(96% 0.018 80);
+}
+.btn--warm:hover { background: oklch(36% 0.075 45); border-color: oklch(36% 0.075 45); }
+
 /* ----- Forms ----- */
 .form { display: grid; gap: 1.4rem; }
 .form .row { display: grid; grid-template-columns: 1fr; gap: 1.4rem; }

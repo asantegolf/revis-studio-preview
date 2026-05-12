@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" />
-<link rel="stylesheet" href="assets/css/style.css?v=4" />
+<link rel="stylesheet" href="assets/css/style.css?v=5" />
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
 </head>
 <body>
@@ -37,60 +37,74 @@
 
 <main id="main">
 
+  <!-- ============ HERO ============ -->
   <section class="page-hero">
     <div class="wrap">
       <p class="eyebrow">Contact</p>
-      <h1>Visit the studio, or begin a project.</h1>
+      <h1 class="h-accent">Visit the studio, or <em>begin&nbsp;a&nbsp;project.</em></h1>
+      <p class="lede">
+        Toby reads every note herself, and writes back within one business day.
+      </p>
     </div>
   </section>
 
+  <!-- ============ CALLING CARD ============ -->
   <section class="section">
     <div class="wrap">
-      <div class="split">
-        <div class="split__label">
-          <p class="eyebrow">Reach us</p>
-        </div>
-        <div>
-          <dl class="contact-list">
-            <div>
-              <dt>Studio</dt>
+      <aside class="warm-card" aria-label="Studio details">
+        <span class="warm-card__no">N° 225 — UES</span>
+
+        <div class="warm-card__grid">
+
+          <div class="warm-card__block">
+            <p class="eyebrow">The studio</p>
+            <h2 style="font-size: var(--fs-xl); line-height: 1.15; margin-bottom: 1.25rem;">By appointment, on the <em>Upper East Side.</em></h2>
+            <dl style="margin: 0;">
+              <dt>Address</dt>
               <dd>
+                Revis Studio<br/>
                 225 East 74th Street, #6N<br/>
-                New York, NY 10021<br/>
-                <span class="mono dim" style="font-size: var(--fs-xs);">By appointment, Mon — Fri</span>
+                New York, NY 10021
               </dd>
-            </div>
-            <div>
+              <dt>Hours</dt>
+              <dd>Monday — Friday <span class="note">by appointment</span></dd>
+              <dt>Map</dt>
+              <dd><a href="https://maps.google.com/?q=225+East+74th+Street+New+York+NY+10021" rel="noopener" target="_blank">Open in Google Maps&nbsp;↗</a></dd>
+            </dl>
+          </div>
+
+          <div class="warm-card__block">
+            <p class="eyebrow">Reach Toby</p>
+            <h2 style="font-size: var(--fs-xl); line-height: 1.15; margin-bottom: 1.25rem;">Phone, email, or <em>Instagram.</em></h2>
+            <dl style="margin: 0;">
               <dt>Phone</dt>
               <dd>
-                <a href="tel:+12129878544">+1 212 987 8544</a> &nbsp;<span class="dim mono" style="font-size: var(--fs-xs);">studio</span><br/>
-                <a href="tel:+19172930707">+1 917 293 0707</a> &nbsp;<span class="dim mono" style="font-size: var(--fs-xs);">cell</span>
+                <a href="tel:+12129878544">212 987 8544</a> <span class="note">studio</span><br/>
+                <a href="tel:+19172930707">917 293 0707</a> <span class="note">cell</span>
               </dd>
-            </div>
-            <div>
               <dt>Email</dt>
               <dd><a href="mailto:toby@revisstudio.com">toby@revisstudio.com</a></dd>
-            </div>
-            <div>
-              <dt>Social</dt>
-              <dd><a href="https://instagram.com/revisstudio" rel="noopener" target="_blank">Instagram · @revisstudio</a></dd>
-            </div>
-          </dl>
+              <dt>Instagram</dt>
+              <dd><a href="https://instagram.com/revisstudio" rel="noopener" target="_blank">@revisstudio</a></dd>
+            </dl>
+          </div>
+
         </div>
-      </div>
+      </aside>
     </div>
   </section>
 
-  <hr class="rule" />
-
-  <section class="section">
+  <!-- ============ INQUIRY FORM ============ -->
+  <section class="section" style="padding-top: clamp(1rem, 0.5rem + 1vw, 2rem);">
     <div class="wrap">
       <div class="split">
         <div class="split__label">
           <p class="eyebrow">Inquiry</p>
         </div>
         <div>
-          <p class="prose">Tell us about your project. We&rsquo;ll reply within one business day.</p>
+          <h2 class="h-accent" style="font-size: var(--fs-xl);">Tell us about <em>your project.</em></h2>
+          <p class="prose mt-2">A floor plan, a fabric reference, a single image — or simply a question.</p>
+
           <form id="inquiryForm" class="form mt-3" novalidate>
             <div class="row row--2">
               <div class="field">
@@ -104,13 +118,13 @@
             </div>
             <div class="field">
               <label for="f-msg">Message</label>
-              <textarea id="f-msg" name="message" required placeholder="A few sentences about the project, the room, or the question."></textarea>
+              <textarea id="f-msg" name="message" required placeholder="A few sentences about the room, the brief, or the question."></textarea>
             </div>
             <div class="form__foot">
               <p class="form__note">Your message goes directly to Toby.</p>
-              <button type="submit" class="btn">Send <span class="arr" aria-hidden="true">→</span></button>
+              <button type="submit" class="btn btn--warm">Send to the studio <span class="arr" aria-hidden="true">→</span></button>
             </div>
-            <p id="formStatus" hidden class="mono" style="font-size: var(--fs-sm); color: var(--ochre); padding: 1rem; background: color-mix(in oklch, var(--ochre) 8%, var(--paper)); border-radius: 2px;"></p>
+            <p id="formStatus" hidden class="mono mt-2" style="font-size: var(--fs-sm); padding: 1rem 1.25rem; border-radius: var(--rad-lg); background: color-mix(in oklch, oklch(64% 0.10 55) 14%, var(--paper)); color: oklch(36% 0.075 45);"></p>
           </form>
         </div>
       </div>
@@ -143,6 +157,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=4" defer></script>
+<script src="assets/js/main.js?v=5" defer></script>
 </body>
 </html>
