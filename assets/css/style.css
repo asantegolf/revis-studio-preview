@@ -937,15 +937,15 @@ figcaption b { color: var(--ink); font-weight: 500; }
 .foot__social {
   display: inline-flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 1rem;
   justify-self: center;
 }
 .foot__social a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 22px;
+  height: 22px;
   color: var(--foot-text);
   opacity: 0.7;
   border-bottom: 0 !important;
@@ -953,8 +953,8 @@ figcaption b { color: var(--ink); font-weight: 500; }
 }
 .foot__social a:hover { opacity: 1; color: oklch(98% 0.018 75); }
 .foot__social svg {
-  width: 18px;
-  height: 18px;
+  width: 100%;
+  height: 100%;
   display: block;
   fill: currentColor;
 }
@@ -962,20 +962,18 @@ figcaption b { color: var(--ink); font-weight: 500; }
 .foot__meta {
   display: inline-flex;
   align-items: center;
-  gap: 1.75rem;
+  justify-content: flex-end;
+  gap: clamp(2rem, 1.5rem + 1.5vw, 3rem);
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--foot-muted);
   justify-self: end;
+  min-width: 0;
 }
-.foot__meta .sep {
-  width: 4px; height: 4px; border-radius: 50%;
-  background: color-mix(in oklch, var(--foot-text) 30%, transparent);
-  display: inline-block;
-}
-@media (max-width: 720px) { .foot__meta { justify-self: center; } }
+.foot__copy { white-space: nowrap; }
+@media (max-width: 720px) { .foot__meta { justify-self: center; gap: 1.5rem; } }
 .foot__meta a {
   color: var(--foot-muted);
   border-bottom: 1px solid color-mix(in oklch, var(--foot-text) 30%, transparent);
