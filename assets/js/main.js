@@ -140,6 +140,29 @@
   /* ----- Year in footer if needed ----- */
   $$('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
 
+  /* ----- Image loader: read data-img on figures, inject <img> with proper srcset.
+     The .ph CSS background under each figure serves as a tonal placeholder
+     until the real photo arrives. ----- */
+  $$('figure[data-img]').forEach(fig => {
+    const id = fig.dataset.img;
+    if (!id) return;
+    const w = parseInt(fig.dataset.imgW || '1600', 10);
+    const focal = fig.dataset.imgFocal || 'center';
+    const base = `https://images.unsplash.com/photo-${id}`;
+    const params = '&auto=format&fit=crop&fm=avif';
+    const img = new Image();
+    img.src = `${base}?w=${w}&q=80${params}`;
+    img.srcset = `${base}?w=600&q=70${params} 600w, ${base}?w=1000&q=75${params} 1000w, ${base}?w=1600&q=80${params} 1600w, ${base}?w=2200&q=80${params} 2200w`;
+    img.sizes = fig.dataset.imgSizes || '(max-width: 720px) 100vw, (max-width: 1100px) 70vw, 1000px';
+    img.alt = fig.dataset.alt || fig.querySelector('.tag')?.textContent?.trim() || '';
+    img.loading = fig.classList.contains('vt-hero') ? 'eager' : 'lazy';
+    if (fig.classList.contains('vt-hero')) img.fetchPriority = 'high';
+    img.decoding = 'async';
+    img.style.objectPosition = focal;
+    img.onload = () => img.classList.add('is-loaded');
+    fig.appendChild(img);
+  });
+
   /* ----- Smooth-scroll for in-page links (respect prefers-reduced-motion) ----- */
   $$('a[href^="#"]').forEach(a => {
     a.addEventListener('click', (e) => {
