@@ -510,21 +510,16 @@ figcaption b { color: var(--ink); font-weight: 500; }
 /* Side-by-side contact layout: warm card | inquiry form */
 .contact-split {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(1.5rem, 1rem + 1.5vw, 2.5rem);
+  grid-template-columns: 1fr 1.05fr;
+  gap: clamp(1.25rem, 1rem + 1vw, 2.25rem);
   align-items: stretch;
 }
-@media (min-width: 900px) {
-  .contact-split { grid-template-columns: 1fr 1.05fr; gap: clamp(1.5rem, 1rem + 1.5vw, 2.5rem); }
+@media (max-width: 720px) {
+  .contact-split { grid-template-columns: 1fr; }
 }
 .contact-split > .warm-card { height: 100%; }
 .contact-split__form {
-  padding: clamp(0.5rem, 0.5rem + 0.5vw, 1.5rem) 0;
-}
-@media (min-width: 900px) {
-  .contact-split__form {
-    padding: clamp(0.5rem, 0.5rem + 0.5vw, 1rem) clamp(0.5rem, 0.5rem + 0.75vw, 1.5rem);
-  }
+  padding: clamp(0.25rem, 0.25rem + 0.5vw, 1rem) clamp(0.25rem, 0.25rem + 0.5vw, 1rem);
 }
 .warm-card__block { display: flex; flex-direction: column; gap: 0.6rem; }
 .warm-card__block .label {
