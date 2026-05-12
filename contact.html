@@ -38,36 +38,32 @@
 <main id="main">
 
   <!-- ============ HERO ============ -->
-  <section class="page-hero">
+  <section class="page-hero" style="padding-block: clamp(2rem, 1.5rem + 1.5vw, 3rem) clamp(1rem, 0.75rem + 0.5vw, 1.5rem); border-bottom: 0;">
     <div class="wrap">
       <p class="eyebrow">Contact</p>
-      <h1 class="h-accent">Visit the studio, or <em>begin&nbsp;a&nbsp;project.</em></h1>
-      <p class="lede">
+      <h1 class="h-accent" style="max-width: 22ch;">Visit the studio, or <em>begin&nbsp;a&nbsp;project.</em></h1>
+      <p class="lede" style="margin-top: 1rem;">
         Toby reads every note herself, and writes back within one business day.
       </p>
     </div>
   </section>
 
   <!-- ============ CALLING CARD ============ -->
-  <section class="section">
+  <section class="section" style="padding-block: clamp(1rem, 0.75rem + 1vw, 2rem);">
     <div class="wrap">
       <aside class="warm-card" aria-label="Studio details">
-        <span class="warm-card__no">N° 225 — UES</span>
-
         <div class="warm-card__grid">
 
           <div class="warm-card__block">
             <p class="eyebrow">The studio</p>
-            <h2 style="font-size: var(--fs-xl); line-height: 1.15; margin-bottom: 1.25rem;">By appointment, on the <em>Upper East Side.</em></h2>
-            <dl style="margin: 0;">
+            <dl style="margin: 1rem 0 0;">
               <dt>Address</dt>
               <dd>
                 Revis Studio<br/>
                 225 East 74th Street, #6N<br/>
-                New York, NY 10021
+                New York, NY 10021<br/>
+                <span class="note">By appointment, Mon — Fri</span>
               </dd>
-              <dt>Hours</dt>
-              <dd>Monday — Friday <span class="note">by appointment</span></dd>
               <dt>Map</dt>
               <dd><a href="https://maps.google.com/?q=225+East+74th+Street+New+York+NY+10021" rel="noopener" target="_blank">Open in Google Maps&nbsp;↗</a></dd>
             </dl>
@@ -75,8 +71,7 @@
 
           <div class="warm-card__block">
             <p class="eyebrow">Reach Toby</p>
-            <h2 style="font-size: var(--fs-xl); line-height: 1.15; margin-bottom: 1.25rem;">Phone, email, or <em>Instagram.</em></h2>
-            <dl style="margin: 0;">
+            <dl style="margin: 1rem 0 0;">
               <dt>Phone</dt>
               <dd>
                 <a href="tel:+12129878544">212 987 8544</a> <span class="note">studio</span><br/>
@@ -95,39 +90,33 @@
   </section>
 
   <!-- ============ INQUIRY FORM ============ -->
-  <section class="section" style="padding-top: clamp(1rem, 0.5rem + 1vw, 2rem);">
-    <div class="wrap">
-      <div class="split">
-        <div class="split__label">
-          <p class="eyebrow">Inquiry</p>
-        </div>
-        <div>
-          <h2 class="h-accent" style="font-size: var(--fs-xl);">Tell us about <em>your project.</em></h2>
-          <p class="prose mt-2">A floor plan, a fabric reference, a single image — or simply a question.</p>
+  <section class="section" style="padding-top: clamp(2rem, 1.5rem + 1vw, 3rem); padding-bottom: clamp(2.5rem, 2rem + 2vw, 4rem);">
+    <div class="wrap wrap--narrow" style="text-align: center;">
+      <p class="eyebrow">Inquiry</p>
+      <h2 class="h-accent mt-2" style="font-size: var(--fs-xl);">Tell us about <em>your project.</em></h2>
+      <p class="prose mt-2" style="margin-inline: auto;">A floor plan, a fabric reference, a single image — or simply a question.</p>
 
-          <form id="inquiryForm" class="form mt-3" novalidate>
-            <div class="row row--2">
-              <div class="field">
-                <label for="f-name">Your name</label>
-                <input id="f-name" name="name" type="text" required autocomplete="name" placeholder="First and last" />
-              </div>
-              <div class="field">
-                <label for="f-email">Email</label>
-                <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="you@studio.com" />
-              </div>
-            </div>
-            <div class="field">
-              <label for="f-msg">Message</label>
-              <textarea id="f-msg" name="message" required placeholder="A few sentences about the room, the brief, or the question."></textarea>
-            </div>
-            <div class="form__foot">
-              <p class="form__note">Your message goes directly to Toby.</p>
-              <button type="submit" class="btn btn--warm">Send to the studio <span class="arr" aria-hidden="true">→</span></button>
-            </div>
-            <p id="formStatus" hidden class="mono mt-2" style="font-size: var(--fs-sm); padding: 1rem 1.25rem; border-radius: var(--rad-lg); background: color-mix(in oklch, oklch(64% 0.10 55) 14%, var(--paper)); color: oklch(36% 0.075 45);"></p>
-          </form>
+      <form id="inquiryForm" class="form mt-3" style="text-align: left;" novalidate>
+        <div class="row row--2">
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" type="text" required autocomplete="name" placeholder="First and last" />
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="you@studio.com" />
+          </div>
         </div>
-      </div>
+        <div class="field">
+          <label for="f-msg">Message</label>
+          <textarea id="f-msg" name="message" required placeholder="A few sentences about the room, the brief, or the question."></textarea>
+        </div>
+        <div class="form__foot">
+          <p class="form__note">Your message goes directly to Toby.</p>
+          <button type="submit" class="btn btn--warm">Send to the studio <span class="arr" aria-hidden="true">→</span></button>
+        </div>
+        <p id="formStatus" hidden class="mono mt-2" style="font-size: var(--fs-sm); padding: 1rem 1.25rem; border-radius: var(--rad-lg); background: color-mix(in oklch, oklch(64% 0.10 55) 14%, var(--paper)); color: oklch(36% 0.075 45);"></p>
+      </form>
     </div>
   </section>
 
