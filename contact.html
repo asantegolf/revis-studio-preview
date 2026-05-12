@@ -48,74 +48,77 @@
     </div>
   </section>
 
-  <!-- ============ CALLING CARD ============ -->
-  <section class="section" style="padding-block: clamp(1rem, 0.75rem + 1vw, 2rem);">
+  <!-- ============ SIDE-BY-SIDE: CALLING CARD + INQUIRY ============ -->
+  <section class="section" style="padding-block: clamp(1.25rem, 1rem + 1vw, 2.25rem) clamp(2rem, 1.5rem + 2vw, 4rem);">
     <div class="wrap">
-      <aside class="warm-card" aria-label="Studio details">
-        <div class="warm-card__grid">
+      <div class="contact-split">
 
-          <div class="warm-card__block">
-            <p class="label">Address</p>
-            <p class="value">
-              Revis Studio<br/>
-              225 East 74th Street, #6N<br/>
-              New York, NY 10021
-            </p>
-            <p class="meta">By appointment, Monday — Friday</p>
+        <!-- LEFT: warm calling card (stacked, single column) -->
+        <aside class="warm-card warm-card--stack" aria-label="Studio details">
+          <div class="warm-card__grid">
+
+            <div class="warm-card__block">
+              <p class="label">Address</p>
+              <p class="value">
+                Revis Studio<br/>
+                225 East 74th Street, #6N<br/>
+                New York, NY 10021
+              </p>
+              <p class="meta">By appointment, Monday — Friday</p>
+            </div>
+
+            <div class="warm-card__block">
+              <p class="label">Phone</p>
+              <p class="value">
+                <a href="tel:+12129878544">212 987 8544</a> <span class="note">studio</span><br/>
+                <a href="tel:+19172930707">917 293 0707</a> <span class="note">cell</span>
+              </p>
+            </div>
+
+            <div class="warm-card__block">
+              <p class="label">Email</p>
+              <p class="value"><a href="mailto:toby@revisstudio.com">toby@revisstudio.com</a></p>
+            </div>
+
+            <div class="warm-card__block">
+              <p class="label">Instagram</p>
+              <p class="value"><a href="https://instagram.com/revisstudio" rel="noopener" target="_blank">@revisstudio</a></p>
+            </div>
+
           </div>
 
-          <div class="warm-card__block">
-            <p class="label">Phone</p>
-            <p class="value">
-              <a href="tel:+12129878544">212 987 8544</a> <span class="note">studio</span><br/>
-              <a href="tel:+19172930707">917 293 0707</a> <span class="note">cell</span>
-            </p>
+          <div class="warm-card__foot">
+            <a href="https://maps.google.com/?q=225+East+74th+Street+New+York+NY+10021" rel="noopener" target="_blank">Open in Google Maps&nbsp;↗</a>
           </div>
+        </aside>
 
-          <div class="warm-card__block">
-            <p class="label">Email</p>
-            <p class="value"><a href="mailto:toby@revisstudio.com">toby@revisstudio.com</a></p>
+        <!-- RIGHT: inquiry form -->
+        <div class="contact-split__form">
+          <p class="eyebrow">Inquiry</p>
+          <h2 class="h-accent mt-2" style="font-size: var(--fs-xl);">Tell us about <em>your project.</em></h2>
+          <p class="prose mt-2">A floor plan, a fabric reference, a single image — or simply a question.</p>
 
-            <p class="label">Instagram</p>
-            <p class="value"><a href="https://instagram.com/revisstudio" rel="noopener" target="_blank">@revisstudio</a></p>
-          </div>
-
+          <form id="inquiryForm" class="form mt-3" novalidate>
+            <div class="field">
+              <label for="f-name">Your name</label>
+              <input id="f-name" name="name" type="text" required autocomplete="name" placeholder="First and last" />
+            </div>
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="you@studio.com" />
+            </div>
+            <div class="field">
+              <label for="f-msg">Message</label>
+              <textarea id="f-msg" name="message" required placeholder="A few sentences about the room, the brief, or the question."></textarea>
+            </div>
+            <div class="form__foot" style="justify-content: flex-start;">
+              <button type="submit" class="btn btn--warm">Send to the studio <span class="arr" aria-hidden="true">→</span></button>
+            </div>
+            <p id="formStatus" hidden class="mono mt-2" style="font-size: var(--fs-sm); padding: 1rem 1.25rem; border-radius: var(--rad-lg); background: color-mix(in oklch, oklch(64% 0.10 55) 14%, var(--paper)); color: oklch(36% 0.075 45);"></p>
+          </form>
         </div>
 
-        <div class="warm-card__foot">
-          <a href="https://maps.google.com/?q=225+East+74th+Street+New+York+NY+10021" rel="noopener" target="_blank">Open in Google Maps&nbsp;↗</a>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <!-- ============ INQUIRY FORM ============ -->
-  <section class="section" style="padding-top: clamp(2rem, 1.5rem + 1vw, 3rem); padding-bottom: clamp(2.5rem, 2rem + 2vw, 4rem);">
-    <div class="wrap wrap--narrow" style="text-align: center;">
-      <p class="eyebrow">Inquiry</p>
-      <h2 class="h-accent mt-2" style="font-size: var(--fs-xl);">Tell us about <em>your project.</em></h2>
-      <p class="prose mt-2" style="margin-inline: auto;">A floor plan, a fabric reference, a single image — or simply a question.</p>
-
-      <form id="inquiryForm" class="form mt-3" style="text-align: left;" novalidate>
-        <div class="row row--2">
-          <div class="field">
-            <label for="f-name">Your name</label>
-            <input id="f-name" name="name" type="text" required autocomplete="name" placeholder="First and last" />
-          </div>
-          <div class="field">
-            <label for="f-email">Email</label>
-            <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="you@studio.com" />
-          </div>
-        </div>
-        <div class="field">
-          <label for="f-msg">Message</label>
-          <textarea id="f-msg" name="message" required placeholder="A few sentences about the room, the brief, or the question."></textarea>
-        </div>
-        <div class="form__foot" style="justify-content: center;">
-          <button type="submit" class="btn btn--warm">Send to the studio <span class="arr" aria-hidden="true">→</span></button>
-        </div>
-        <p id="formStatus" hidden class="mono mt-2" style="font-size: var(--fs-sm); padding: 1rem 1.25rem; border-radius: var(--rad-lg); background: color-mix(in oklch, oklch(64% 0.10 55) 14%, var(--paper)); color: oklch(36% 0.075 45);"></p>
-      </form>
+      </div>
     </div>
   </section>
 

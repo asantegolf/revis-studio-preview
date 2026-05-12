@@ -496,13 +496,35 @@ figcaption b { color: var(--ink); font-weight: 500; }
 .warm-card__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(1.75rem, 1.25rem + 1.5vw, 2.5rem) clamp(2rem, 1.5rem + 1.5vw, 3rem);
+  gap: clamp(1.5rem, 1rem + 1vw, 2rem) clamp(2rem, 1.5rem + 1.5vw, 3rem);
 }
+.warm-card--stack .warm-card__grid { grid-template-columns: 1fr; }
+.warm-card--3up .warm-card__grid { grid-template-columns: 1fr; }
 @media (min-width: 640px) {
-  .warm-card__grid { grid-template-columns: 1fr 1fr; }
+  .warm-card--3up .warm-card__grid { grid-template-columns: 1fr 1fr; }
 }
 @media (min-width: 1000px) {
-  .warm-card__grid { grid-template-columns: 1.4fr 1fr 1fr; }
+  .warm-card--3up .warm-card__grid { grid-template-columns: 1.4fr 1fr 1fr; }
+}
+
+/* Side-by-side contact layout: warm card | inquiry form */
+.contact-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 1rem + 1.5vw, 2.5rem);
+  align-items: stretch;
+}
+@media (min-width: 900px) {
+  .contact-split { grid-template-columns: 1fr 1.05fr; gap: clamp(1.5rem, 1rem + 1.5vw, 2.5rem); }
+}
+.contact-split > .warm-card { height: 100%; }
+.contact-split__form {
+  padding: clamp(0.5rem, 0.5rem + 0.5vw, 1.5rem) 0;
+}
+@media (min-width: 900px) {
+  .contact-split__form {
+    padding: clamp(0.5rem, 0.5rem + 0.5vw, 1rem) clamp(0.5rem, 0.5rem + 0.75vw, 1.5rem);
+  }
 }
 .warm-card__block { display: flex; flex-direction: column; gap: 0.6rem; }
 .warm-card__block .label {
