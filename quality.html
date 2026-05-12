@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" />
-<link rel="stylesheet" href="assets/css/style.css?v=19" />
+<link rel="stylesheet" href="assets/css/style.css?v=21" />
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
 </head>
 <body>
@@ -37,59 +37,77 @@
 <main id="main">
 
   <!-- ============ HERO ============ -->
-  <section class="page-hero" style="padding-block: clamp(1.25rem, 1rem + 1vw, 2rem) clamp(0.5rem, 0.5rem + 0.5vw, 1rem); border-bottom: 0;">
+  <section class="page-hero" style="padding-block: clamp(1rem, 0.75rem + 0.5vw, 1.5rem) clamp(0.5rem, 0.5rem + 0.25vw, 0.75rem); border-bottom: 0;">
     <div class="wrap">
-      <p class="eyebrow">Natural quality</p>
-      <h1 class="h-accent" style="max-width: 24ch; font-size: clamp(1.6rem, 1.3rem + 1vw, 2.2rem); margin-top: 0.4rem; line-height: 1.1;">Explore our <em>finest&nbsp;qualities.</em></h1>
+      <div class="quality-head">
+        <div>
+          <p class="eyebrow">Natural quality</p>
+          <h1 class="h-accent" style="max-width: 26ch; font-size: clamp(1.5rem, 1.25rem + 1vw, 2.1rem); margin-top: 0.4rem; line-height: 1.1;">Explore our <em>finest&nbsp;qualities.</em></h1>
+        </div>
+        <p class="quality-head__intro">
+          Hand‑spun, batch‑dyed, hand‑knotted. <em style="color: var(--ochre); font-style: italic;">Better with every year.</em>
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- ============ SIDE-BY-SIDE: COLLAGE + WARM CARD ============ -->
-  <section class="section" style="padding-block: clamp(0.75rem, 0.5rem + 0.5vw, 1.25rem) clamp(1rem, 0.75rem + 1vw, 1.75rem);">
+  <!-- ============ HORIZONTAL PROCESS STRIP ============ -->
+  <section class="quality-strip">
     <div class="wrap">
-      <div class="contact-split">
+      <ol class="quality-flow">
 
-        <!-- LEFT: feature collage image -->
-        <figure class="quality-feature">
-          <div class="ph ph--wool" aria-hidden="true"></div>
-          <img src="https://revisstudio.com/wp-content/uploads/2021/09/Untitled-collage-min.jpg" alt="Wool, dyed yarn, loom and a finished Revis Studio carpet" loading="eager" decoding="async" />
-          <figcaption>Wool · Dye · Weave · Finish</figcaption>
-        </figure>
-
-        <!-- RIGHT: warm calling card with quality pillars -->
-        <aside class="warm-card warm-card--stack" aria-label="Quality details">
-          <div class="warm-card__grid">
-
-            <div class="warm-card__block">
-              <p class="label">Wool</p>
-              <p class="value">Tibetan long‑staple, sourced from sheep raised on the high plateaus of the <em style="font-style: italic;">Himalaya</em>.</p>
-              <p class="meta">Hand‑spun &amp; hand‑carded</p>
-            </div>
-
-            <div class="warm-card__block">
-              <p class="label">Dye</p>
-              <p class="value">Batch‑dyed by hand with natural vegetable pigments, or premium Swiss dyes where sun‑fastness is critical.</p>
-            </div>
-
-            <div class="warm-card__block">
-              <p class="label">Weave</p>
-              <p class="value">Hand‑knotted by Nepal‑based master craftspeople using the traditional Tibetan technique.</p>
-            </div>
-
+        <li class="qstep">
+          <div class="qstep__head">
+            <span class="qstep__no">01</span>
+            <span class="qstep__line" aria-hidden="true"></span>
           </div>
+          <figure class="qstep__media">
+            <img src="https://images.unsplash.com/photo-1670764732222-e787bccd934f?w=600&q=78&auto=format&fit=crop" alt="Hand-spun Tibetan wool yarn" loading="eager" decoding="async" />
+          </figure>
+          <h3 class="qstep__title">Wool</h3>
+          <p class="qstep__sub">Tibetan long‑staple, from the high plateaus of the Himalaya.</p>
+          <p class="qstep__meta">Hand‑spun &amp; hand‑carded</p>
+        </li>
 
-          <div class="warm-card__foot">
-            <a href="contact.html">Begin a commission&nbsp;↗</a>
+        <li class="qstep">
+          <div class="qstep__head">
+            <span class="qstep__no">02</span>
+            <span class="qstep__line" aria-hidden="true"></span>
           </div>
-        </aside>
+          <figure class="qstep__media">
+            <img src="https://images.unsplash.com/photo-1660490025500-e49fa2f64d0e?w=600&q=78&auto=format&fit=crop" alt="Yarn dyed with natural pigments" loading="eager" decoding="async" />
+          </figure>
+          <h3 class="qstep__title">Dye</h3>
+          <p class="qstep__sub">Batch‑dyed by hand with natural vegetable pigments &mdash; or premium Swiss dyes.</p>
+          <p class="qstep__meta">Small lots · tested in your light</p>
+        </li>
 
-      </div>
+        <li class="qstep">
+          <div class="qstep__head">
+            <span class="qstep__no">03</span>
+            <span class="qstep__line" aria-hidden="true"></span>
+          </div>
+          <figure class="qstep__media">
+            <img src="https://images.unsplash.com/photo-1598616068517-c75ad397a436?w=600&q=78&auto=format&fit=crop" alt="Hand-knotted carpet on a Tibetan loom" loading="eager" decoding="async" />
+          </figure>
+          <h3 class="qstep__title">Weave</h3>
+          <p class="qstep__sub">Hand‑knotted by Nepal‑based masters using the traditional Tibetan technique.</p>
+          <p class="qstep__meta">One knot at a time</p>
+        </li>
 
-      <!-- Closing statement -->
-      <p class="quality-close mt-3">
-        Because this high‑quality yarn has abundant <em>natural&nbsp;lanolin</em>, your rugs will only increase in beauty and lustre with use over the years.
-      </p>
+        <li class="qstep">
+          <div class="qstep__head">
+            <span class="qstep__no">04</span>
+          </div>
+          <figure class="qstep__media">
+            <img src="https://revisstudio.com/wp-content/uploads/2020/11/122991246_371111444323682_4792032784960273467_n.jpg" alt="A finished Revis Studio carpet in situ" loading="eager" decoding="async" />
+          </figure>
+          <h3 class="qstep__title">Patina</h3>
+          <p class="qstep__sub">Abundant natural lanolin means each rug only grows in beauty and lustre with use.</p>
+          <p class="qstep__meta">Heirloom from day one</p>
+        </li>
 
+      </ol>
     </div>
   </section>
 
