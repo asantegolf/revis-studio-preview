@@ -158,6 +158,76 @@
     fig.appendChild(img);
   });
 
+  /* ----- Testimonials stage carousel ----- */
+  const stage = $('.stage');
+  if (stage) {
+    const quotes = $$('.stage__quote', stage);
+    const casts = $$('.cast-card', stage);
+    const counter = $('[data-current]', stage);
+    const progress = $('.stage__progress', stage);
+
+    if (quotes.length) {
+      // Split each blockquote into word spans for the stagger reveal
+      quotes.forEach(q => {
+        const bq = q.querySelector('blockquote');
+        if (!bq || bq.dataset.split) return;
+        const text = bq.textContent.trim().replace(/[“”"]/g, '');
+        bq.innerHTML = text.split(/\s+/).map((w, i) =>
+          `<span class="word" style="--i:${i}">${w}</span>`
+        ).join(' ');
+        bq.dataset.split = '1';
+      });
+
+      let idx = quotes[0] && quotes[0].classList.contains('is-active') ? 0 : 0;
+      let timer;
+      const DUR = 7000;
+
+      const setActive = (n) => {
+        const next = (n + quotes.length) % quotes.length;
+        if (next === idx && quotes[idx].classList.contains('is-active')) return;
+        quotes[idx]?.classList.remove('is-active');
+        casts[idx]?.classList.remove('is-active');
+        idx = next;
+        quotes[idx]?.classList.add('is-active');
+        casts[idx]?.classList.add('is-active');
+        if (counter) counter.textContent = String(idx + 1).padStart(2, '0');
+        // Restart progress animation
+        if (progress) {
+          stage.classList.remove('is-playing');
+          // force reflow
+          void stage.offsetWidth;
+          stage.classList.add('is-playing');
+        }
+      };
+
+      const play = () => {
+        stop();
+        if (reduceMotion) return;
+        stage.classList.add('is-playing');
+        timer = setInterval(() => setActive(idx + 1), DUR);
+      };
+      const stop = () => {
+        clearInterval(timer);
+        stage.classList.remove('is-playing');
+      };
+
+      casts.forEach((c, n) => c.addEventListener('click', () => { setActive(n); play(); }));
+      stage.addEventListener('mouseenter', stop);
+      stage.addEventListener('mouseleave', play);
+
+      // Pause when the page is hidden
+      document.addEventListener('visibilitychange', () => {
+        document.hidden ? stop() : play();
+      });
+
+      // Activate first quote on load
+      quotes[0].classList.add('is-active');
+      casts[0]?.classList.add('is-active');
+      if (counter) counter.textContent = '01';
+      play();
+    }
+  }
+
   /* ----- Smooth-scroll for in-page links (respect prefers-reduced-motion) ----- */
   $$('a[href^="#"]').forEach(a => {
     a.addEventListener('click', (e) => {
