@@ -496,34 +496,66 @@ figcaption b { color: var(--ink); font-weight: 500; }
 .warm-card__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(1.75rem, 1.25rem + 1.5vw, 2.75rem);
+  gap: clamp(1.75rem, 1.25rem + 1.5vw, 2.5rem) clamp(2rem, 1.5rem + 1.5vw, 3rem);
 }
-@media (min-width: 720px) {
-  .warm-card__grid { grid-template-columns: 1fr 1fr; gap: clamp(2rem, 1.5rem + 2vw, 4rem); }
+@media (min-width: 640px) {
+  .warm-card__grid { grid-template-columns: 1fr 1fr; }
 }
-.warm-card__block dt {
+@media (min-width: 1000px) {
+  .warm-card__grid { grid-template-columns: 1.4fr 1fr 1fr; }
+}
+.warm-card__block { display: flex; flex-direction: column; gap: 0.6rem; }
+.warm-card__block .label {
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: color-mix(in oklch, oklch(96% 0.018 80) 68%, transparent);
-  margin-bottom: 0.75rem;
+  color: color-mix(in oklch, oklch(96% 0.018 80) 62%, transparent);
 }
-.warm-card__block dd {
+.warm-card__block .value {
   font-family: var(--font-display);
   font-size: var(--fs-md);
   font-weight: 380;
   line-height: 1.5;
   color: oklch(96% 0.018 80);
+  margin: 0;
 }
-.warm-card__block dd + dt { margin-top: 1.5rem; }
-.warm-card__block dd .note {
+.warm-card__block .value + .label { margin-top: 1rem; }
+.warm-card__block .note {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.04em;
+  color: color-mix(in oklch, oklch(96% 0.018 80) 55%, transparent);
+  margin-left: 0.35em;
+}
+.warm-card__block .meta {
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
   letter-spacing: 0.04em;
   color: color-mix(in oklch, oklch(96% 0.018 80) 60%, transparent);
-  margin-left: 0.5em;
+  margin-top: 0.35rem;
 }
+
+.warm-card__foot {
+  margin-top: clamp(1.5rem, 1rem + 1.5vw, 2.25rem);
+  padding-top: clamp(1.25rem, 1rem + 0.75vw, 1.75rem);
+  border-top: 1px solid color-mix(in oklch, oklch(96% 0.018 80) 18%, transparent);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.warm-card__foot a {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: oklch(96% 0.018 80);
+  border-bottom: 1px solid color-mix(in oklch, oklch(96% 0.018 80) 40%, transparent);
+  padding-bottom: 1px;
+}
+.warm-card__foot a:hover { border-bottom-color: oklch(96% 0.018 80); }
 
 /* Numeric flourish for the warm card */
 .warm-card__no {
