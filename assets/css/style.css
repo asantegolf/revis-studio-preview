@@ -686,18 +686,34 @@ figcaption b { color: var(--ink); font-weight: 500; }
   font-size: var(--fs-xs);
   letter-spacing: 0.16em;
   color: var(--ink-mute);
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.55rem;
   transition: color var(--dur-fast) var(--ease);
 }
 .cast-card.is-active .cast-card__no { color: var(--ochre); }
+.cast-card__teaser {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 380;
+  font-size: var(--fs-sm);
+  line-height: 1.35;
+  color: var(--ink-soft);
+  margin: 0 0 0.7rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.cast-card.is-active .cast-card__teaser { color: var(--ink); }
 .cast-card b {
   font-family: var(--font-display);
   font-weight: 420;
   font-size: var(--fs-md);
   color: var(--ink);
   line-height: 1.2;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
   letter-spacing: -0.005em;
+  margin-top: auto;
 }
 .cast-card__role {
   font-family: var(--font-mono);
