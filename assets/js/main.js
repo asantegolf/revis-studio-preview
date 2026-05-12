@@ -182,6 +182,18 @@
       let timer;
       const DUR = 7000;
 
+      const castStrip = $('.stage__cast', stage);
+      const scrollActiveIntoView = () => {
+        if (!castStrip) return;
+        const card = casts[idx];
+        if (!card) return;
+        const cardL = card.offsetLeft;
+        const cardW = card.offsetWidth;
+        const stripW = castStrip.clientWidth;
+        const target = cardL - (stripW - cardW) / 2;
+        castStrip.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
+      };
+
       const setActive = (n) => {
         const next = (n + quotes.length) % quotes.length;
         if (next === idx && quotes[idx].classList.contains('is-active')) return;
@@ -191,6 +203,7 @@
         quotes[idx]?.classList.add('is-active');
         casts[idx]?.classList.add('is-active');
         if (counter) counter.textContent = String(idx + 1).padStart(2, '0');
+        scrollActiveIntoView();
         // Restart progress animation
         if (progress) {
           stage.classList.remove('is-playing');
@@ -199,6 +212,19 @@
           stage.classList.add('is-playing');
         }
       };
+
+      // Update fade edges based on scroll position
+      const wrap = $('.stage__cast-wrap', stage);
+      const updateFades = () => {
+        if (!castStrip || !wrap) return;
+        const atStart = castStrip.scrollLeft <= 2;
+        const atEnd = castStrip.scrollLeft + castStrip.clientWidth >= castStrip.scrollWidth - 2;
+        wrap.dataset.scrollStart = atStart ? '0' : '1';
+        wrap.dataset.scrollEnd = atEnd ? '1' : '0';
+      };
+      castStrip?.addEventListener('scroll', updateFades, { passive: true });
+      window.addEventListener('resize', updateFades);
+      setTimeout(updateFades, 100);
 
       const play = () => {
         stop();
