@@ -353,6 +353,7 @@ figcaption b { color: var(--ink); font-weight: 500; }
   overflow: hidden;
   background: var(--bone);
 }
+.work-card figure img { opacity: 1; }
 .work-card__head {
   display: flex;
   justify-content: space-between;
