@@ -415,6 +415,29 @@ figcaption b { color: var(--ink); font-weight: 500; }
 }
 .split__label { padding-top: 0.3em; }
 
+/* ----- Page hero split row (used on contact and similar) ----- */
+.page-hero__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem 2rem;
+  align-items: end;
+}
+@media (min-width: 880px) {
+  .page-hero__row { grid-template-columns: 1.2fr 1fr; gap: 2rem; }
+}
+.page-hero__intro {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: 380;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 48ch;
+  margin: 0;
+}
+@media (min-width: 880px) {
+  .page-hero__intro { justify-self: end; text-align: right; padding-bottom: 0.25rem; }
+}
+
 /* ----- About page (editorial profile) ----- */
 .profile {
   display: grid;
